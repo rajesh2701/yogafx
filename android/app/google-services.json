@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "339008250674",
+    "project_id": "yoga-fx-f9430",
+    "storage_bucket": "yoga-fx-f9430.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:339008250674:android:c7abcfe0cbac0765e86d2b",
+        "android_client_info": {
+          "package_name": "com.divayoga.yogafx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "339008250674-o91i05rka6hurbjel435pbgfs1pk24c4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuBKxxgVYNHL05sU4FigzSv7tWhCWxcfE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "339008250674-o91i05rka6hurbjel435pbgfs1pk24c4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "339008250674-gs0r30bi4bq0lsfmbvp4atphp5shqj8e.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.divayoga.yogafx"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:339008250674:android:6d8b9305766f10c7e86d2b",
+        "android_client_info": {
+          "package_name": "com.portailphoenix.yogafx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "339008250674-o91i05rka6hurbjel435pbgfs1pk24c4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuBKxxgVYNHL05sU4FigzSv7tWhCWxcfE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "339008250674-o91i05rka6hurbjel435pbgfs1pk24c4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "339008250674-gs0r30bi4bq0lsfmbvp4atphp5shqj8e.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.divayoga.yogafx"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
