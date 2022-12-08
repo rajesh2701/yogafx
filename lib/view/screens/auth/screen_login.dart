@@ -81,28 +81,16 @@ class ScreenLogin extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Text(
-                      'auth_forgot_password'.tr,
-                      style: GoogleFonts.comfortaa(
-                          fontSize: 14.sp, fontWeight: FontWeight.w700),
-                    ),
-                    SizedBox(
-                      width: 4.w,
-                    ),
                     InkWell(
                       onTap: () {
-                        Get.off(
-                          () => ScreenForgotPassword(),
-                          duration: const Duration(milliseconds: 600),
-                          transition: Transition.downToUp,
-                        );
+                        Get.offNamed('/forgotpassword');
                       },
                       child: Text(
-                        'auth_reset_password'.tr,
+                        'auth_forgot_password'.tr,
                         style: GoogleFonts.comfortaa(
-                            fontSize: 16.sp,
+                            fontSize: 14.sp,
                             fontWeight: FontWeight.w700,
-                            color: AppColorsTheme.black),
+                            color: AppColorsTheme.accentColor),
                       ),
                     ),
                   ],
@@ -150,34 +138,18 @@ class ScreenLogin extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () {
-                    Get.off(
-                      () => ScreenRegister(),
-                      duration: const Duration(milliseconds: 600),
-                      transition: Transition.downToUp,
-                    );
+                    Get.offNamed('/register');
                   },
                   child: Text(
                     'auth_register'.tr,
                     style: GoogleFonts.comfortaa(
-                        fontSize: 16.sp,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w700,
-                        color: AppColorsTheme.black),
+                        color: AppColorsTheme.accentColor),
                   ),
                 ),
               ],
             )
-
-            // RichTextQuestion(
-            //     textQuestion: 'auth_no_account'.tr,
-            //     linkText: 'auth_register'.tr,
-            //     onClick: () {
-            //       Get.off(
-            //         () => ScreenRegister(),
-            //         duration: const Duration(milliseconds: 600),
-            //         transition: Transition.downToUp,
-            //       );
-            //     }
-            // ),
           ],
         ),
       );

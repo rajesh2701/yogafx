@@ -101,9 +101,9 @@ class ScreenForgotPassword extends StatelessWidget {
                   child: Text(
                     'auth_login'.tr,
                     style: TextStyle(
-                        fontSize: 16.sp,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w700,
-                        color: AppColorsTheme.black),
+                        color: AppColorsTheme.accentColor),
                   ),
                 ),
               ],
