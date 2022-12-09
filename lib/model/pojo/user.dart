@@ -4,7 +4,7 @@ class UserModel {
   String uid;
   String userEmail;
   String userFirstName;
-  String userLastName;
+  //String userLastName;
   int userAge;
   String userCountry;
   String userRegion;
@@ -14,7 +14,7 @@ class UserModel {
       {required this.uid,
       required this.userEmail,
       required this.userFirstName,
-      required this.userLastName,
+     // required this.userLastName,
       required this.userAge,
       required this.userCountry,
       required this.userRegion,
@@ -24,7 +24,7 @@ class UserModel {
       : uid = json['uid'] as String,
         userEmail = json['userEmail'] as String,
         userFirstName = json['userFirstName'] as String,
-        userLastName = json['userLastName'] as String,
+        //userLastName = json['userLastName'] as String,
         userAge = json['userAge'] as int,
         userCountry = json['userCountry'] as String,
         userRegion = json['userRegion'] as String,
@@ -34,7 +34,7 @@ class UserModel {
         'uid': uid,
         'userEmail': userEmail,
         'userFirstName': userFirstName,
-        'userLastName': userLastName,
+        //'userLastName': userLastName,
         'userAge': userAge,
         'userCountry': userCountry,
         'userRegion': userRegion,
@@ -46,7 +46,7 @@ class UserModel {
       'uid': uid,
       'userEmail': userEmail,
       'userFirstName': userFirstName,
-      'userLastName': userLastName,
+      //'userLastName': userLastName,
       'userAge': userAge,
       'userCountry': userCountry,
       'userRegion': userRegion,
@@ -60,7 +60,7 @@ class UserModel {
         uid: doc.data()!['uid'],
         userEmail: doc.data()!['userEmail'],
         userFirstName: doc.data()!['userFirstName'],
-        userLastName: doc.data()!['userLastName'],
+        //userLastName: doc.data()!['userLastName'],
         userAge: doc.data()!['userAge'],
         userCountry: doc.data()!['userCountry'],
         userRegion: doc.data()!['userRegion'],

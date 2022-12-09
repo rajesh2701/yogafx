@@ -18,7 +18,7 @@ class SplashScreen extends StatelessWidget {
         children: [
           const BackgroundGraphic(height: 700, radius: 120),
           Positioned(
-              top: 286,
+              top: 270,
               left: 48,
               right: 48,
               child: Column(

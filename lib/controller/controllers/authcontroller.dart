@@ -24,7 +24,7 @@ class AuthController extends GetxController {
   final TextEditingController signUpPasswordController =
       TextEditingController();
   final TextEditingController firstNameController = TextEditingController();
-  final TextEditingController secondNamwController = TextEditingController();
+  //final TextEditingController secondNamwController = TextEditingController();
   final TextEditingController confirmPasswordController =
       TextEditingController();
   final TextEditingController ageController = TextEditingController();
@@ -223,7 +223,7 @@ class AuthController extends GetxController {
   Future<UserModel> collectUserData() async {
     String userEmail = signUpEmailController.text.trim();
     String userFirstName = firstNameController.text.trim();
-    String userLastName = secondNamwController.text.trim();
+    //String userLastName = secondNamwController.text.trim();
     int userAge = int.parse(ageController.text.trim());
     bool userGender = signUpGender == 'male' ? true : false;
 
@@ -231,7 +231,7 @@ class AuthController extends GetxController {
         uid: '',
         userEmail: userEmail,
         userFirstName: userFirstName,
-        userLastName: userLastName,
+        //userLastName: userLastName,
         userAge: userAge,
         userCountry: selectedCountry!,
         userRegion: selectedRegion!,
@@ -242,7 +242,7 @@ class AuthController extends GetxController {
   clearRegistrationFields() {
     signUpNext = false;
     firstNameController.clear();
-    secondNamwController.clear();
+    //secondNamwController.clear();
     signUpEmailController.clear();
     signUpPasswordController.clear();
     confirmPasswordController.clear();
