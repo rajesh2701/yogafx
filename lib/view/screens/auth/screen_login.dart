@@ -19,6 +19,7 @@ class ScreenLogin extends StatelessWidget {
             const Background(),
             bottomQuestionWidget(),
             formWidget(context),
+            const ProgressBarText(loadingText: 'Loading...')
           ],
         ));
   }
@@ -101,9 +102,11 @@ class ScreenLogin extends StatelessWidget {
                 PrimaryButton(
                     labelText: 'auth_login'.tr,
                     onClciked: () async {
-                      if (_formKey.currentState!.validate()) {
-                        authController.signInWithEmailAndPassword(context);
-                      }
+                      authController.isLoading = true;
+                      authController.update();
+                      // if (_formKey.currentState!.validate()) {
+                      //   authController.signInWithEmailAndPassword(context);
+                      // }
                     }),
               ],
             )),

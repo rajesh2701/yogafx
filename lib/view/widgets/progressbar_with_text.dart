@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:yogafx/controller/controller.dart';
 import 'package:yogafx/model/model.dart';
@@ -14,11 +15,32 @@ class ProgressBarText extends StatelessWidget {
     return GetBuilder<AuthController>(
       builder: (controller) {
         return Container(
-          child: controller.isLoading ? widgetLoader() : const SizedBox(),
+          child: controller.isLoading ? loadingWidget() : const SizedBox(),
         );
       },
     );
   }
+
+  Widget loadingWidget() => Center(
+        child: Container(
+          height: 150.h,
+          width: 150.h,
+          decoration: BoxDecoration(
+              color: AppColorsTheme.white,
+              borderRadius: BorderRadius.all(Radius.circular(15.r))),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CircularProgressIndicator(
+                strokeWidth: 4.r,
+                color: AppColorsTheme.accentColor,
+              ),
+              SizedBox(height: 30.h,),
+              Text(loadingText, style: fontAccent10Style,)
+            ],
+          ),
+        ),
+      );
 
   Widget widgetLoader() => Center(
         child: Container(
