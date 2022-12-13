@@ -102,11 +102,11 @@ class ScreenLogin extends StatelessWidget {
                 PrimaryButton(
                     labelText: 'auth_login'.tr,
                     onClciked: () async {
-                      authController.isLoading = true;
-                      authController.update();
-                      // if (_formKey.currentState!.validate()) {
-                      //   authController.signInWithEmailAndPassword(context);
-                      // }
+                      //authController.isLoading = true;
+                      //authController.update();
+                      if (_formKey.currentState!.validate()) {
+                        authController.signInWithEmailAndPassword(context);
+                      }
                     }),
               ],
             )),

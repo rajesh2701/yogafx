@@ -23,11 +23,11 @@ class ProgressBarText extends StatelessWidget {
 
   Widget loadingWidget() => Center(
         child: Container(
-          height: 150.h,
-          width: 150.h,
+          height: 180.h,
+          width: 180.w,
           decoration: BoxDecoration(
-              color: AppColorsTheme.white,
-              borderRadius: BorderRadius.all(Radius.circular(15.r))),
+              color: AppColorsTheme.black,
+              borderRadius: BorderRadius.all(Radius.circular(30.r))),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -35,8 +35,13 @@ class ProgressBarText extends StatelessWidget {
                 strokeWidth: 4.r,
                 color: AppColorsTheme.accentColor,
               ),
-              SizedBox(height: 30.h,),
-              Text(loadingText, style: fontAccent10Style,)
+              SizedBox(
+                height: 50.h,
+              ),
+              Text(
+                loadingText,
+                style: fontAccent15Style,
+              )
             ],
           ),
         ),

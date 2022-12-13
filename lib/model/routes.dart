@@ -8,7 +8,7 @@ appRoutes() => [
           page: () => const SplashScreen(),
           middlewares: [MyMiddelware()],
           transition: Transition.circularReveal,
-          transitionDuration: const Duration(milliseconds: 500)),
+          transitionDuration: const Duration(milliseconds: 700)),
       GetPage(
           name: '/login',
           page: () => ScreenLogin(),
@@ -31,8 +31,8 @@ appRoutes() => [
           name: '/home',
           page: () => const ScreenHome(),
           middlewares: [MyMiddelware()],
-          transition: Transition.circularReveal,
-          transitionDuration: const Duration(milliseconds: 500)),
+          transition: Transition.zoom,
+          transitionDuration: const Duration(milliseconds: 700)),
     ];
 
 class MyMiddelware extends GetMiddleware {

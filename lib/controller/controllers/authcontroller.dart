@@ -77,17 +77,21 @@ class AuthController extends GetxController {
 
     if (isRegistred) {
       if (firebaseUser == null) {
-        Get.offAll(() => const SplashScreen());
+        Get.offAllNamed('/splash');
+        //Get.offAll(() => const SplashScreen());
       } else {
         //getUserName();
-        Get.offAll(() => const ScreenHome());
+        Get.offAllNamed('/home');
+        //Get.offAll(() => const ScreenHome());
       }
     } else {
       if (firebaseUser == null) {
-        Get.offAll(() => const SplashScreen());
+        Get.offAllNamed('/splash');
+        //Get.offAll(() => const SplashScreen());
       } else {
         //getUserName();
-        Get.offAll(() => const ScreenHome());
+        Get.offAllNamed('/home');
+        //Get.offAll(() => const ScreenHome());
       }
     }
   }
