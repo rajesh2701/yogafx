@@ -96,4 +96,13 @@ class Validator {
       return null;
     }
   }
+
+  // TERMS CHECKED VALIDATOR
+  String? terms(bool? value) {
+    if (value!) {
+      return null;
+    } else {
+      return 'please select terms';
+    }
+  }
 }

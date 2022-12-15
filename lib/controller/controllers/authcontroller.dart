@@ -32,7 +32,8 @@ class AuthController extends GetxController {
       TextEditingController();
 
   bool signUpNext = false;
-  String signUpGender = 'male';
+  bool signUpTerms = false;
+  String signUpGender = 'female';
   String? selectedCountry;
   String? selectedRegion;
   RxBool isCountrySelected = false.obs;
@@ -60,12 +61,6 @@ class AuthController extends GetxController {
         Settings.getValue('pref-userName', defaultValue: '')!;
 
     super.onReady();
-  }
-
-  // SIGN UP SCREEN GENDER SELECTION
-  void handleGenderChange(String value) {
-    signUpGender = value;
-    update();
   }
 
   // Firebase user a realtime stream
@@ -279,6 +274,18 @@ class AuthController extends GetxController {
 
   Future<void> updateButtonClickStatus(bool buttonClick) async {
     isButtonRegisterClicked.value = buttonClick;
+    update();
+  }
+
+  // SIGN UP SCREEN GENDER SELECTION
+  void handleGenderChange(String value) {
+    signUpGender = value;
+    update();
+  }
+
+  // SIGN UP SCREEN TERMS ACCEPT
+  void handleTermsChecked(bool accepted) {
+    signUpTerms = accepted;
     update();
   }
 }

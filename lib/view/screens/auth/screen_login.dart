@@ -26,7 +26,7 @@ class ScreenLogin extends StatelessWidget {
   }
 
   Widget formWidget(BuildContext context) => Positioned(
-        top: 300.h,
+        top: 280.h,
         left: 25.w,
         right: 25.w,
         child: Form(
@@ -103,11 +103,11 @@ class ScreenLogin extends StatelessWidget {
               PrimaryButton(
                   labelText: 'auth_login'.tr,
                   onClciked: () async {
-                    authController.isLoading = true;
-                    authController.update();
-                    // if (_formKey.currentState!.validate()) {
-                    //   authController.signInWithEmailAndPassword(context);
-                    // }
+                    // authController.isLoading = true;
+                    // authController.update();
+                    if (_formKey.currentState!.validate()) {
+                      authController.signInWithEmailAndPassword(context);
+                    }
                   }),
             ],
           ),

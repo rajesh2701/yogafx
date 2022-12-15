@@ -22,3 +22,9 @@ TextStyle fontAccent15Style = TextStyle(
 
 TextStyle fontBlack15Style = TextStyle(
     color: AppColorsTheme.black, fontWeight: FontWeight.bold, fontSize: 20.sp);
+
+
+TextStyle fontError10Style = TextStyle(
+    color: AppColorsTheme.red,
+    fontWeight: FontWeight.bold,
+    fontSize: 14.sp);

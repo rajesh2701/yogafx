@@ -37,7 +37,7 @@ class ScreenRegister extends StatelessWidget {
 
   // FROM WIDGET 1 FOR NAME & EMAIL
   Widget formWidget1() => Positioned(
-        top: 250.h,
+        top: 220.h,
         left: 25.w,
         right: 25.w,
         child: Form(
@@ -126,12 +126,12 @@ class ScreenRegister extends StatelessWidget {
               PrimaryButton(
                   labelText: 'auth_signup_next'.tr,
                   onClciked: () {
-                    authController.signUpNext = true;
-                    authController.update();
-                    // if (_formKey.currentState!.validate()) {
-                    //   authController.signUpNext = true;
-                    //   authController.update();
-                    // }
+                    //authController.signUpNext = true;
+                    //authController.update();
+                    if (_formKey.currentState!.validate()) {
+                      authController.signUpNext = true;
+                      authController.update();
+                    }
                   }),
             ],
           ),
@@ -143,7 +143,7 @@ class ScreenRegister extends StatelessWidget {
         Form(
           key: _formKey,
           child: Positioned(
-              top: 250.h,
+              top: 200.h,
               left: 25.w,
               right: 25.w,
               child: Column(
@@ -195,21 +195,20 @@ class ScreenRegister extends StatelessWidget {
 
                     ///Dropdown box decoration to style your dropdown selector [OPTIONAL PARAMETER] (USE with disabledDropdownDecoration)
                     dropdownDecoration: BoxDecoration(
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(10)),
+                        borderRadius: BorderRadius.all(Radius.circular(20.r)),
                         color: Colors.white,
                         border: Border.all(color: Colors.black, width: 1)),
 
                     ///Disabled Dropdown box decoration to style your dropdown selector [OPTIONAL PARAMETER]  (USE with disabled dropdownDecoration)
                     disabledDropdownDecoration: BoxDecoration(
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(10)),
-                        color: Colors.grey.shade300,
-                        border: Border.all(
-                            color: AppColorsTheme.subtextBlack, width: 1)),
+                        borderRadius: BorderRadius.all(Radius.circular(20.r)),
+                        //color: Colors.grey.shade300,
+                        color: Colors.grey.shade200,
+                        border:
+                            Border.all(color: AppColorsTheme.black, width: 1)),
                   ),
                   SizedBox(
-                    height: 5.h,
+                    height: 8.h,
                   ),
                   Obx(() => authController.isButtonRegisterClicked.value
                       ? authController.isCountrySelected.value
@@ -217,11 +216,11 @@ class ScreenRegister extends StatelessWidget {
                               ? const SizedBox()
                               : Text(
                                   'Select Region',
-                                  style: fontAccent10Style,
+                                  style: fontError10Style,
                                 )
                           : Text(
                               'Select Country',
-                              style: fontAccent10Style,
+                              style: fontError10Style,
                             )
                       : const SizedBox()),
                   SizedBox(
@@ -236,8 +235,8 @@ class ScreenRegister extends StatelessWidget {
                       Flexible(
                         fit: FlexFit.loose,
                         child: RadioListTile(
-                            title: const Text('Male'),
-                            value: 'male',
+                            title: const Text('Female'),
+                            value: 'female',
                             activeColor: AppColorsTheme.accentColor,
                             groupValue: authController.signUpGender,
                             onChanged: (value) =>
@@ -246,13 +245,13 @@ class ScreenRegister extends StatelessWidget {
                       Flexible(
                         fit: FlexFit.loose,
                         child: RadioListTile(
-                            title: const Text('Female'),
-                            value: 'female',
+                            title: const Text('Male'),
+                            value: 'male',
                             activeColor: AppColorsTheme.accentColor,
                             groupValue: authController.signUpGender,
                             onChanged: (value) =>
                                 authController.handleGenderChange(value!)),
-                      )
+                      ),
                     ],
                   ),
                   SizedBox(
@@ -269,6 +268,45 @@ class ScreenRegister extends StatelessWidget {
                         authController.ageController.text = value!,
                     textInputAction: TextInputAction.done,
                   ),
+                  SizedBox(
+                    height: 15.h,
+                  ),
+                  CheckBoxFormField(
+                      isChecked: authController.signUpTerms,
+                      label: Transform.translate(
+                        offset: Offset(-15.w, 0),
+                        child: RichText(
+                            text: TextSpan(
+                                text: 'Accept',
+                                style: fontBlack15Style,
+                                children: [
+                              WidgetSpan(
+                                  alignment: PlaceholderAlignment.baseline,
+                                  baseline: TextBaseline.alphabetic,
+                                  child: SizedBox(width: 5.w)),
+                              TextSpan(
+                                text: 'terms',
+                                style: fontAccent15Style,
+                              ),
+                              WidgetSpan(
+                                  alignment: PlaceholderAlignment.baseline,
+                                  baseline: TextBaseline.alphabetic,
+                                  child: SizedBox(width: 5.w)),
+                              const TextSpan(text: 'and'),
+                              WidgetSpan(
+                                  alignment: PlaceholderAlignment.baseline,
+                                  baseline: TextBaseline.alphabetic,
+                                  child: SizedBox(width: 5.w)),
+                              TextSpan(
+                                text: 'conditions',
+                                style: fontAccent15Style,
+                              ),
+                            ])),
+                      ),
+                      onChanged: ((value) {
+                        authController.handleTermsChecked(value!);
+                      }),
+                      validator: Validator().terms),
                   SizedBox(
                     height: 30.h,
                   ),

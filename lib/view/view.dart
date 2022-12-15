@@ -16,3 +16,4 @@ export 'widgets/rich_text_question.dart';
 export 'widgets/text_form_field.dart';
 export 'widgets/background_graphic.dart';
 export 'widgets/background_screen.dart';
+export 'widgets/checkbox_formfield.dart';
