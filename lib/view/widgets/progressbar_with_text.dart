@@ -36,7 +36,7 @@ class ProgressBarText extends StatelessWidget {
                 color: AppColorsTheme.accentColor,
               ),
               SizedBox(
-                height: 50.h,
+                height: 30.h,
               ),
               Text(
                 loadingText,

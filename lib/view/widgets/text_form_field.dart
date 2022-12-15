@@ -63,7 +63,7 @@ class TextFieldForm extends StatelessWidget {
               borderRadius: BorderRadius.circular(20.r)),
           focusedBorder: OutlineInputBorder(
               borderSide:
-                  BorderSide(color: AppColorsTheme.subtextBlack, width: 0.2.h),
+                  BorderSide(color: AppColorsTheme.accentColor, width: 1.h),
               borderRadius: BorderRadius.circular(20.r))),
     );
   }

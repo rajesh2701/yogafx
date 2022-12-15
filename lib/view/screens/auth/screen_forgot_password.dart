@@ -12,22 +12,22 @@ class ScreenForgotPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+        backgroundColor: Colors.white,
         body: Stack(
-      children: [
-        const Background(),
-        bottomQuestionWidget(),
-        formWidget(context)
-      ],
-    ));
+          children: [
+            const Background(),
+            bottomQuestionWidget(),
+            formWidget(context)
+          ],
+        ));
   }
 
   Widget formWidget(BuildContext context) => Form(
         key: _formKey,
         child: Positioned(
-            top: 218,
-            left: 25,
-            right: 25,
+            top: 300.h,
+            left: 25.w,
+            right: 25.w,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.stretch,

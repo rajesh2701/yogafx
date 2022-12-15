@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_overrides
+
 import 'package:get/route_manager.dart';
 import 'package:yogafx/view/view.dart';
 
@@ -38,7 +40,7 @@ appRoutes() => [
 class MyMiddelware extends GetMiddleware {
   @override
   GetPage? onPageCalled(GetPage? page) {
-    print(page?.name);
+    //print(page?.name);
     return super.onPageCalled(page);
   }
 }

@@ -17,6 +17,7 @@ class AppColorsTheme {
   static Color cardColorWhite = const Color(0XFFF1F1F1);
   static Color cardColorBlack = const Color(0xFF474747);
   static Color circleColor = const Color.fromRGBO(110, 190, 69, .5);
+  static Color red = const Color(0xFFFF0000);
 }
 
 class AppTheme {
@@ -34,7 +35,7 @@ class AppTheme {
             secondary: AppColorsTheme.accentColor, brightness: Brightness.light)
         .copyWith(secondary: AppColorsTheme.accentColor),
     // color for appbar in home page
-    errorColor: AppColorsTheme.accentColor,
+    errorColor: AppColorsTheme.red,
     cardColor: AppColorsTheme.cardColorWhite,
     appBarTheme: AppBarTheme(
         elevation: 0,
@@ -62,7 +63,7 @@ class AppTheme {
               brightness: Brightness.dark)
           .copyWith(secondary: AppColorsTheme.accentColor),
       // color for appbar in home page
-      errorColor: AppColorsTheme.accentColor,
+      errorColor: AppColorsTheme.red,
       cardColor: AppColorsTheme.cardColorBlack,
       appBarTheme: AppBarTheme(
           elevation: 0,

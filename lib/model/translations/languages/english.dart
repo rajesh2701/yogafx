@@ -1,6 +1,6 @@
 const Map<String, String> languageEnglish = {
   // SPLASH SCREEN
-  'app_name': 'Yoga F(x)',
+  'app_name': 'YOGA F(x)',
 
   //SCREEN NAMES
   'screen_splash': 'Spalsh Screen',

@@ -18,22 +18,22 @@ class SplashScreen extends StatelessWidget {
         children: [
           const BackgroundGraphic(height: 700, radius: 120),
           Positioned(
-              top: 270,
-              left: 48,
-              right: 48,
+              top: 285.h,
+              left: 48.w,
+              right: 48.w,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(
                     Icons.person,
+                    size: 275.w,
                     color: Colors.white,
-                    size: 276.w,
                   ),
                   SizedBox(
                     height: 6.h,
                   ),
                   Text(
-                    'app_name'.tr.toUpperCase(),
+                    'app_name'.tr,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         fontSize: 64.sp,

@@ -36,105 +36,106 @@ class ScreenRegister extends StatelessWidget {
       );
 
   // FROM WIDGET 1 FOR NAME & EMAIL
-  Widget formWidget1() => Form(
-        key: _formKey,
-        child: Positioned(
-            top: 218,
-            left: 25,
-            right: 25,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Text(
-                  'Create Account',
-                  style: GoogleFonts.comfortaa(
-                      fontSize: 40.sp, fontWeight: FontWeight.w700),
-                ),
-                SizedBox(
-                  height: 22.h,
-                ),
-                TextFieldForm(
-                  controller: authController.firstNameController,
-                  iconPrefix: Icons.person,
-                  labelText: 'auth_hint_firstname'.tr,
-                  keyboardType: TextInputType.name,
-                  validator: Validator().name,
-                  onChanged: (value) => {},
-                  onSaved: (value) =>
-                      authController.firstNameController.text = value!,
-                  textInputAction: TextInputAction.next,
-                ),
-                SizedBox(
-                  height: 20.h,
-                ),
-                TextFieldForm(
-                  controller: authController.signUpEmailController,
-                  iconPrefix: Icons.email,
-                  labelText: 'auth_hint_email'.tr,
-                  keyboardType: TextInputType.emailAddress,
-                  validator: Validator().email,
-                  onChanged: (value) => {},
-                  onSaved: (value) =>
-                      authController.signUpEmailController.text = value!,
-                  textInputAction: TextInputAction.next,
-                ),
-                SizedBox(
-                  height: 20.h,
-                ),
-                TextFieldForm(
-                  controller: authController.signUpPasswordController,
-                  iconPrefix: Icons.lock,
-                  labelText: 'auth_hint_password'.tr,
-                  keyboardType: TextInputType.visiblePassword,
-                  validator: Validator().password,
-                  onChanged: (value) => {},
-                  onSaved: (value) =>
-                      authController.signUpPasswordController.text = value!,
-                  textInputAction: TextInputAction.next,
-                  obscureText: true,
-                  maxLines: 1,
-                ),
-                SizedBox(
-                  height: 20.h,
-                ),
-                TextFieldForm(
-                  controller: authController.confirmPasswordController,
-                  iconPrefix: Icons.lock,
-                  labelText: 'auth_hint_confirm_password'.tr,
-                  keyboardType: TextInputType.visiblePassword,
-                  validator: Validator().confirmPassword,
-                  onChanged: (value) => {},
-                  onSaved: (value) =>
-                      authController.confirmPasswordController.text = value!,
-                  obscureText: true,
-                  maxLines: 1,
-                  textInputAction: TextInputAction.done,
-                ),
-                // SizedBox(
-                //   height: 11.h,
-                // ),
-                // CheckboxListTile(
-                //   value: false,
-                //   onChanged: (value) {},
-                //   controlAffinity: ListTileControlAffinity.leading,
-                //   title: const Text('Accept terms and conditions'),
-                // ),
-                SizedBox(
-                  height: 20.h,
-                ),
-                PrimaryButton(
-                    labelText: 'auth_signup_next'.tr,
-                    onClciked: () {
-                      authController.signUpNext = true;
-                      authController.update();
-                      // if (_formKey.currentState!.validate()) {
-                      //   authController.signUpNext = true;
-                      //   authController.update();
-                      // }
-                    }),
-              ],
-            )),
+  Widget formWidget1() => Positioned(
+        top: 250.h,
+        left: 25.w,
+        right: 25.w,
+        child: Form(
+          key: _formKey,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                'Create Account',
+                style: GoogleFonts.comfortaa(
+                    fontSize: 40.sp, fontWeight: FontWeight.w700),
+              ),
+              SizedBox(
+                height: 22.h,
+              ),
+              TextFieldForm(
+                controller: authController.firstNameController,
+                iconPrefix: Icons.person,
+                labelText: 'auth_hint_firstname'.tr,
+                keyboardType: TextInputType.name,
+                validator: Validator().name,
+                onChanged: (value) => {},
+                onSaved: (value) =>
+                    authController.firstNameController.text = value!,
+                textInputAction: TextInputAction.next,
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              TextFieldForm(
+                controller: authController.signUpEmailController,
+                iconPrefix: Icons.email,
+                labelText: 'auth_hint_email'.tr,
+                keyboardType: TextInputType.emailAddress,
+                validator: Validator().email,
+                onChanged: (value) => {},
+                onSaved: (value) =>
+                    authController.signUpEmailController.text = value!,
+                textInputAction: TextInputAction.next,
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              TextFieldForm(
+                controller: authController.signUpPasswordController,
+                iconPrefix: Icons.lock,
+                labelText: 'auth_hint_password'.tr,
+                keyboardType: TextInputType.visiblePassword,
+                validator: Validator().password,
+                onChanged: (value) => {},
+                onSaved: (value) =>
+                    authController.signUpPasswordController.text = value!,
+                textInputAction: TextInputAction.next,
+                obscureText: true,
+                maxLines: 1,
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              TextFieldForm(
+                controller: authController.confirmPasswordController,
+                iconPrefix: Icons.lock,
+                labelText: 'auth_hint_confirm_password'.tr,
+                keyboardType: TextInputType.visiblePassword,
+                validator: Validator().confirmPassword,
+                onChanged: (value) => {},
+                onSaved: (value) =>
+                    authController.confirmPasswordController.text = value!,
+                obscureText: true,
+                maxLines: 1,
+                textInputAction: TextInputAction.done,
+              ),
+              // SizedBox(
+              //   height: 11.h,
+              // ),
+              // CheckboxListTile(
+              //   value: false,
+              //   onChanged: (value) {},
+              //   controlAffinity: ListTileControlAffinity.leading,
+              //   title: const Text('Accept terms and conditions'),
+              // ),
+              SizedBox(
+                height: 20.h,
+              ),
+              PrimaryButton(
+                  labelText: 'auth_signup_next'.tr,
+                  onClciked: () {
+                    authController.signUpNext = true;
+                    authController.update();
+                    // if (_formKey.currentState!.validate()) {
+                    //   authController.signUpNext = true;
+                    //   authController.update();
+                    // }
+                  }),
+            ],
+          ),
+        ),
       );
 
   // FROM WIDGET 2 FOR Age & Country...etc
@@ -142,9 +143,9 @@ class ScreenRegister extends StatelessWidget {
         Form(
           key: _formKey,
           child: Positioned(
-              top: 218,
-              left: 25,
-              right: 25,
+              top: 250.h,
+              left: 25.w,
+              right: 25.w,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.stretch,

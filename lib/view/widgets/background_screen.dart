@@ -10,6 +10,34 @@ class Background extends StatelessWidget {
     return Stack(
       children: [
         Positioned(
+            top: -125.h,
+            //bottom: 818.h,
+            left: 250.w,
+            child: CircleAvatar(
+              backgroundColor: AppColorsTheme.circleColor,
+              radius: 125.r,
+            )),
+        Positioned(
+            top: -80.h,
+            //bottom: 818.h,
+            left: 300.w,
+            child: CircleAvatar(
+              backgroundColor: AppColorsTheme.circleColor,
+              radius: 125.r,
+            )),
+      ],
+    );
+  }
+}
+
+class Background1 extends StatelessWidget {
+  const Background1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Positioned(
             bottom: 818.h,
             left: 254.w,
             child: SizedBox(
