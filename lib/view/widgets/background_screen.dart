@@ -10,24 +10,62 @@ class Background extends StatelessWidget {
     return Stack(
       children: [
         Positioned(
-            top: -125.h,
-            //bottom: 818.h,
+            top: -150.h,
             left: 250.w,
-            child: CircleAvatar(
-              backgroundColor: AppColorsTheme.circleColor,
-              radius: 125.r,
+            child: SizedBox(
+              width: 258.h,
+              height: 258.h,
+              child: Material(
+                color: AppColorsTheme.circleColor,
+                shape: const CircleBorder(),
+              ),
             )),
         Positioned(
-            top: -80.h,
-            //bottom: 818.h,
+            top: -100.h,
             left: 300.w,
-            child: CircleAvatar(
-              backgroundColor: AppColorsTheme.circleColor,
-              radius: 125.r,
+            child: SizedBox(
+              width: 258.h,
+              height: 258.h,
+              child: Material(
+                color: AppColorsTheme.circleColor,
+                shape: const CircleBorder(),
+              ),
             )),
       ],
     );
   }
+
+  // @override
+  // Widget build(BuildContext context) {
+  //   return Stack(
+  //     children: [
+  //       Positioned(
+  //           top: -100.h,
+  //           //bottom: 818.h,
+  //           //left: 250.w,
+  //           right: -20.w,
+  //           child: CircleAvatar(
+  //             backgroundColor: AppColorsTheme.circleColor,
+  //             //radius: 125.r,
+  //             radius: ScreenUtil().orientation == Orientation.portrait
+  //                 ? 0.2.sw
+  //                 : 0.12.sw,
+  //           )),
+  //       Positioned(
+  //           top: -50.h,
+  //           //bottom: 818.h,
+  //           //left: 300.w,
+  //           right: -50.w,
+  //           child: CircleAvatar(
+  //             backgroundColor: AppColorsTheme.circleColor,
+  //             //radius: 125.r,
+  //             radius: ScreenUtil().orientation == Orientation.portrait
+  //                 ? 0.2.sw
+  //                 : 0.12.sw,
+  //           )),
+  //     ],
+  //   );
+  // }
 }
 
 class Background1 extends StatelessWidget {

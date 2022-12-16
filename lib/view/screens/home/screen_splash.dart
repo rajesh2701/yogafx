@@ -22,7 +22,7 @@ class SplashScreen extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.person,
-                    size: 275.w,
+                    size: 275.h,
                     color: Colors.white,
                   ),
                   SizedBox(
