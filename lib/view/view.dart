@@ -17,3 +17,5 @@ export 'widgets/text_form_field.dart';
 export 'widgets/background_graphic.dart';
 export 'widgets/background_screen.dart';
 export 'widgets/checkbox_formfield.dart';
+export 'screens/pages/screen_details.dart';
+export 'widgets/expansion_tile.dart';

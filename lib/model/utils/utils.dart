@@ -24,6 +24,10 @@ TextStyle fontBlack15Style = TextStyle(
     color: AppColorsTheme.black, fontWeight: FontWeight.bold, fontSize: 20.sp);
 
 
+TextStyle fontWhite15Style = TextStyle(
+    color: AppColorsTheme.white, fontWeight: FontWeight.bold, fontSize: 20.sp);
+
+
 TextStyle fontError10Style = TextStyle(
     color: AppColorsTheme.red,
     fontWeight: FontWeight.bold,

@@ -48,9 +48,7 @@ class ScreenHome extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {
-              Get.to(() => const ScreenSettings(),
-                  duration: const Duration(milliseconds: 600),
-                  transition: Transition.leftToRight);
+              Get.toNamed('/settings');
             },
             icon: const Icon(Icons.settings),
             color: Colors.white,
@@ -77,11 +75,21 @@ class ScreenHome extends StatelessWidget {
 
   // ANATOMY IMAGE CONTAINDER
   Widget anatomyImageContainer(AppController controller) => Padding(
-        padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
+        padding: EdgeInsets.fromLTRB(10.w, 15.h, 10.w, 15.h),
         child: InteractiveViewer(
-          child: Image.asset(
-            controller.anatomyImage,
-            fit: BoxFit.fill,
+          child: InkWell(
+            onTap: () {
+              Get.to(
+                  () => const ScreenDetails(
+                        bodyPartName: 'Neck Muscle',
+                      ),
+                  transition: Transition.rightToLeftWithFade,
+                  duration: const Duration(milliseconds: 700));
+            },
+            child: Image.asset(
+              controller.anatomyImage,
+              fit: BoxFit.fill,
+            ),
           ),
         ),
       );

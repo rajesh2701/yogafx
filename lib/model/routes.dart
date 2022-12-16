@@ -35,6 +35,12 @@ appRoutes() => [
           middlewares: [MyMiddelware()],
           transition: Transition.zoom,
           transitionDuration: const Duration(milliseconds: 700)),
+      GetPage(
+          name: '/settings',
+          page: () => const ScreenSettings(),
+          middlewares: [MyMiddelware()],
+          transition: Transition.leftToRight,
+          transitionDuration: const Duration(milliseconds: 700)),
     ];
 
 class MyMiddelware extends GetMiddleware {
