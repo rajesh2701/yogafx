@@ -29,7 +29,6 @@ dependencies:
     git:
       url: https://github.com/rajesh2701/csc_picker
       ref: master
-  avatar_glow: ^2.0.2
 
 dev_dependencies:
   flutter_test:

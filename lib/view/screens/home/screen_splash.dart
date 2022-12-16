@@ -9,10 +9,6 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('Device Height : ${ScreenUtil().screenHeight}');
-    print(292.h);
-    print('Device Width : ${ScreenUtil().screenWidth}');
-    print(926.w);
     return Scaffold(
       body: Stack(
         children: [

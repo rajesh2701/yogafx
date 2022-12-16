@@ -126,12 +126,12 @@ class ScreenRegister extends StatelessWidget {
               PrimaryButton(
                   labelText: 'auth_signup_next'.tr,
                   onClciked: () {
-                    //authController.signUpNext = true;
-                    //authController.update();
-                    if (_formKey.currentState!.validate()) {
-                      authController.signUpNext = true;
-                      authController.update();
-                    }
+                    authController.signUpNext = true;
+                    authController.update();
+                    // if (_formKey.currentState!.validate()) {
+                    //   authController.signUpNext = true;
+                    //   authController.update();
+                    // }
                   }),
             ],
           ),
@@ -228,7 +228,7 @@ class ScreenRegister extends StatelessWidget {
                   ),
                   Text(
                     'Gender',
-                    style: fontBlack10Style,
+                    style: fontBlack15Style,
                   ),
                   Row(
                     children: <Widget>[

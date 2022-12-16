@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -21,31 +23,29 @@ class CheckBoxFormField extends FormField<bool> {
                 onChanged(value);
               }
 
-              return Container(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        Checkbox(value: isChecked, onChanged: onChangedHandler),
-                        SizedBox(
-                          width: 8.w,
-                        ),
-                        label
-                      ],
-                    ),
-                    field.isValid
-                        ? const SizedBox()
-                        : Padding(
-                            padding: const EdgeInsets.only(left: 0.0),
-                            child: Text(
-                              field.errorText ?? '',
-                              style:
-                                  TextStyle(color: Colors.red, fontSize: 16.sp),
-                            ),
-                          )
-                  ],
-                ),
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Checkbox(value: isChecked, onChanged: onChangedHandler),
+                      SizedBox(
+                        width: 8.w,
+                      ),
+                      label
+                    ],
+                  ),
+                  field.isValid
+                      ? const SizedBox()
+                      : Padding(
+                          padding: const EdgeInsets.only(left: 0.0),
+                          child: Text(
+                            field.errorText ?? '',
+                            style:
+                                TextStyle(color: Colors.red, fontSize: 16.sp),
+                          ),
+                        )
+                ],
               );
             });
 
