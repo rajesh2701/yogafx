@@ -31,7 +31,25 @@ class ScreenRegister extends StatelessWidget {
         children: [
           const Background(),
           bottomQuestionWidget(),
-          authController.signUpNext ? formWidget2() : formWidget1()
+          authController.signUpNext ? formWidget2() : formWidget1(),
+          authController.signUpNext
+              ? Align(
+                  alignment: Alignment.topLeft,
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(15.w, 50.h, 0, 0),
+                    child: IconButton(
+                        onPressed: () {
+                          authController.signUpNext = false;
+                          authController.update();
+                        },
+                        icon: Icon(
+                          Icons.close,
+                          color: AppColorsTheme.accentColor,
+                          size: 50.r,
+                        )),
+                  ),
+                )
+              : const SizedBox(),
         ],
       );
 
@@ -139,222 +157,205 @@ class ScreenRegister extends StatelessWidget {
       );
 
   // FROM WIDGET 2 FOR Age & Country...etc
-  Widget formWidget2() => Stack(children: [
-        Form(
+  Widget formWidget2() => Positioned(
+        top: 200.h,
+        left: 25.w,
+        right: 25.w,
+        child: Form(
           key: _formKey,
-          child: Positioned(
-              top: 200.h,
-              left: 25.w,
-              right: 25.w,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Text(
-                    'Create Account',
-                    style: GoogleFonts.comfortaa(
-                        fontSize: 40.sp, fontWeight: FontWeight.w700),
-                  ),
-                  SizedBox(
-                    height: 25.h,
-                  ),
-                  CSCPicker(
-                    layout: Layout.vertical,
-                    disableCountry: false,
-                    //defaultCountry: DefaultCountry.Canada,
-                    countryDropdownLabel: "Select Country",
-                    stateDropdownLabel: "Select State",
-                    countrySearchPlaceholder: "Country",
-                    stateSearchPlaceholder: "State",
-                    onCountryChanged: (String? country) {
-                      authController
-                          .updateButtonClickStatus(false)
-                          .then((value) {
-                        authController.selectedCountry = country;
-                        authController.isCountrySelected.value = true;
-                        authController.update();
-                        print('COUNTRY: $country');
-                      });
-                    },
-                    onStateChanged: (String? state) {
-                      authController
-                          .updateButtonClickStatus(false)
-                          .then((value) {
-                        if (state == null || state == 'Select State') {
-                          print('STATE: $state');
-                          authController.isRegionSelected.value = false;
-                          authController.update();
-                        } else {
-                          authController.selectedRegion = state;
-                          authController.isRegionSelected.value = true;
-                          authController.update();
-                          print('STATE: $state');
-                        }
-                      });
-                    },
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                'Create Account',
+                style: GoogleFonts.comfortaa(
+                    fontSize: 40.sp, fontWeight: FontWeight.w700),
+              ),
+              SizedBox(
+                height: 25.h,
+              ),
+              CSCPicker(
+                layout: Layout.vertical,
+                disableCountry: false,
+                //defaultCountry: DefaultCountry.Canada,
+                countryDropdownLabel: "Select Country",
+                stateDropdownLabel: "Select State",
+                countrySearchPlaceholder: "Country",
+                stateSearchPlaceholder: "State",
+                onCountryChanged: (String? country) {
+                  authController
+                      .updateButtonClickStatus(false)
+                      .then((value) {
+                    authController.selectedCountry = country;
+                    authController.isCountrySelected.value = true;
+                    authController.update();
+                    print('COUNTRY: $country');
+                  });
+                },
+                onStateChanged: (String? state) {
+                  authController
+                      .updateButtonClickStatus(false)
+                      .then((value) {
+                    if (state == null || state == 'Select State') {
+                      print('STATE: $state');
+                      authController.isRegionSelected.value = false;
+                      authController.update();
+                    } else {
+                      authController.selectedRegion = state;
+                      authController.isRegionSelected.value = true;
+                      authController.update();
+                      print('STATE: $state');
+                    }
+                  });
+                },
 
-                    ///Dropdown box decoration to style your dropdown selector [OPTIONAL PARAMETER] (USE with disabledDropdownDecoration)
-                    dropdownDecoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(20.r)),
-                        color: Colors.white,
-                        border: Border.all(color: Colors.black, width: 1)),
+                ///Dropdown box decoration to style your dropdown selector [OPTIONAL PARAMETER] (USE with disabledDropdownDecoration)
+                dropdownDecoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(20.r)),
+                    color: Colors.white,
+                    border: Border.all(color: Colors.black, width: 1)),
 
-                    ///Disabled Dropdown box decoration to style your dropdown selector [OPTIONAL PARAMETER]  (USE with disabled dropdownDecoration)
-                    disabledDropdownDecoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(20.r)),
-                        //color: Colors.grey.shade300,
-                        color: Colors.grey.shade200,
-                        border:
-                            Border.all(color: AppColorsTheme.black, width: 1)),
-                  ),
-                  SizedBox(
-                    height: 8.h,
-                  ),
-                  Obx(() => authController.isButtonRegisterClicked.value
-                      ? authController.isCountrySelected.value
-                          ? authController.isRegionSelected.value
-                              ? const SizedBox()
-                              : Text(
-                                  'Select Region',
-                                  style: fontError10Style,
-                                )
+                ///Disabled Dropdown box decoration to style your dropdown selector [OPTIONAL PARAMETER]  (USE with disabled dropdownDecoration)
+                disabledDropdownDecoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(20.r)),
+                    //color: Colors.grey.shade300,
+                    color: Colors.grey.shade200,
+                    border:
+                        Border.all(color: AppColorsTheme.black, width: 1)),
+              ),
+              SizedBox(
+                height: 8.h,
+              ),
+              Obx(() => authController.isButtonRegisterClicked.value
+                  ? authController.isCountrySelected.value
+                      ? authController.isRegionSelected.value
+                          ? const SizedBox()
                           : Text(
-                              'Select Country',
+                              'Select Region',
                               style: fontError10Style,
                             )
-                      : const SizedBox()),
-                  SizedBox(
-                    height: 21.h,
+                      : Text(
+                          'Select Country',
+                          style: fontError10Style,
+                        )
+                  : const SizedBox()),
+              SizedBox(
+                height: 21.h,
+              ),
+              Text(
+                'Gender',
+                style: fontBlack15Style,
+              ),
+              Row(
+                children: <Widget>[
+                  Flexible(
+                    fit: FlexFit.loose,
+                    child: RadioListTile(
+                        title: const Text('Female'),
+                        value: 'female',
+                        activeColor: AppColorsTheme.accentColor,
+                        groupValue: authController.signUpGender,
+                        onChanged: (value) =>
+                            authController.handleGenderChange(value!)),
                   ),
-                  Text(
-                    'Gender',
-                    style: fontBlack15Style,
+                  Flexible(
+                    fit: FlexFit.loose,
+                    child: RadioListTile(
+                        title: const Text('Male'),
+                        value: 'male',
+                        activeColor: AppColorsTheme.accentColor,
+                        groupValue: authController.signUpGender,
+                        onChanged: (value) =>
+                            authController.handleGenderChange(value!)),
                   ),
-                  Row(
-                    children: <Widget>[
-                      Flexible(
-                        fit: FlexFit.loose,
-                        child: RadioListTile(
-                            title: const Text('Female'),
-                            value: 'female',
-                            activeColor: AppColorsTheme.accentColor,
-                            groupValue: authController.signUpGender,
-                            onChanged: (value) =>
-                                authController.handleGenderChange(value!)),
-                      ),
-                      Flexible(
-                        fit: FlexFit.loose,
-                        child: RadioListTile(
-                            title: const Text('Male'),
-                            value: 'male',
-                            activeColor: AppColorsTheme.accentColor,
-                            groupValue: authController.signUpGender,
-                            onChanged: (value) =>
-                                authController.handleGenderChange(value!)),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20.h,
-                  ),
-                  TextFieldForm(
-                    controller: authController.ageController,
-                    iconPrefix: Icons.badge,
-                    labelText: 'auth_signup_age'.tr,
-                    keyboardType: TextInputType.number,
-                    validator: Validator().number,
-                    onChanged: (value) => {},
-                    onSaved: (value) =>
-                        authController.ageController.text = value!,
-                    textInputAction: TextInputAction.done,
-                  ),
-                  SizedBox(
-                    height: 15.h,
-                  ),
-                  CheckBoxFormField(
-                      isChecked: authController.signUpTerms,
-                      label: Transform.translate(
-                        offset: Offset(-15.w, 0),
-                        child: RichText(
-                            text: TextSpan(
-                                text: 'Accept',
-                                style: fontBlack15Style,
-                                children: [
-                              WidgetSpan(
-                                  alignment: PlaceholderAlignment.baseline,
-                                  baseline: TextBaseline.alphabetic,
-                                  child: SizedBox(width: 5.w)),
-                              TextSpan(
-                                text: 'terms',
-                                style: fontAccent15Style,
-                              ),
-                              WidgetSpan(
-                                  alignment: PlaceholderAlignment.baseline,
-                                  baseline: TextBaseline.alphabetic,
-                                  child: SizedBox(width: 5.w)),
-                              const TextSpan(text: 'and'),
-                              WidgetSpan(
-                                  alignment: PlaceholderAlignment.baseline,
-                                  baseline: TextBaseline.alphabetic,
-                                  child: SizedBox(width: 5.w)),
-                              TextSpan(
-                                text: 'conditions',
-                                style: fontAccent15Style,
-                              ),
-                            ])),
-                      ),
-                      onChanged: ((value) {
-                        authController.handleTermsChecked(value!);
-                      }),
-                      validator: Validator().terms),
-                  SizedBox(
-                    height: 30.h,
-                  ),
-                  PrimaryButton(
-                      labelText: 'auth_register'.tr,
-                      onClciked: () async {
-                        //authController.collectUserData();
-                        authController
-                            .updateButtonClickStatus(true)
-                            .then((value) {
-                          if (_formKey.currentState!.validate()) {
-                            //authController.registerWithEmailAndPassword();
-
-                            if (authController.isRegionSelected.value) {
-                              if (authController.selectedRegion !=
-                                  'Select State') {
-                                print(
-                                    'COUNTRY: ${authController.selectedCountry} \n REGION: ${authController.selectedRegion}');
-                                authController.registerWithEmailAndPassword();
-                              } else {
-                                print('Region is not selected correctly');
-                              }
-                            } else {
-                              print('Region is not selected correctly');
-                            }
-                          }
-                        });
-                      }),
                 ],
-              )),
-        ),
-        Align(
-          alignment: Alignment.topLeft,
-          child: Padding(
-            padding: EdgeInsets.fromLTRB(15.w, 50.h, 0, 0),
-            child: IconButton(
-                onPressed: () {
-                  authController.signUpNext = false;
-                  authController.update();
-                },
-                icon: Icon(
-                  Icons.close,
-                  color: AppColorsTheme.accentColor,
-                  size: 50.r,
-                )),
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              TextFieldForm(
+                controller: authController.ageController,
+                iconPrefix: Icons.badge,
+                labelText: 'auth_signup_age'.tr,
+                keyboardType: TextInputType.number,
+                validator: Validator().number,
+                onChanged: (value) => {},
+                onSaved: (value) =>
+                    authController.ageController.text = value!,
+                textInputAction: TextInputAction.done,
+              ),
+              SizedBox(
+                height: 15.h,
+              ),
+              CheckBoxFormField(
+                  isChecked: authController.signUpTerms,
+                  label: Transform.translate(
+                    offset: Offset(-15.w, 0),
+                    child: RichText(
+                        text: TextSpan(
+                            text: 'Accept',
+                            style: fontBlack15Style,
+                            children: [
+                          WidgetSpan(
+                              alignment: PlaceholderAlignment.baseline,
+                              baseline: TextBaseline.alphabetic,
+                              child: SizedBox(width: 5.w)),
+                          TextSpan(
+                            text: 'terms',
+                            style: fontAccent15Style,
+                          ),
+                          WidgetSpan(
+                              alignment: PlaceholderAlignment.baseline,
+                              baseline: TextBaseline.alphabetic,
+                              child: SizedBox(width: 5.w)),
+                          const TextSpan(text: 'and'),
+                          WidgetSpan(
+                              alignment: PlaceholderAlignment.baseline,
+                              baseline: TextBaseline.alphabetic,
+                              child: SizedBox(width: 5.w)),
+                          TextSpan(
+                            text: 'conditions',
+                            style: fontAccent15Style,
+                          ),
+                        ])),
+                  ),
+                  onChanged: ((value) {
+                    authController.handleTermsChecked(value!);
+                  }),
+                  validator: Validator().terms),
+              SizedBox(
+                height: 30.h,
+              ),
+              PrimaryButton(
+                  labelText: 'auth_register'.tr,
+                  onClciked: () async {
+                    //authController.collectUserData();
+                    authController
+                        .updateButtonClickStatus(true)
+                        .then((value) {
+                      if (_formKey.currentState!.validate()) {
+                        //authController.registerWithEmailAndPassword();
+
+                        if (authController.isRegionSelected.value) {
+                          if (authController.selectedRegion !=
+                              'Select State') {
+                            print(
+                                'COUNTRY: ${authController.selectedCountry} \n REGION: ${authController.selectedRegion}');
+                            authController.registerWithEmailAndPassword();
+                          } else {
+                            print('Region is not selected correctly');
+                          }
+                        } else {
+                          print('Region is not selected correctly');
+                        }
+                      }
+                    });
+                  }),
+            ],
           ),
         ),
-      ]);
+      );
 
   Widget bottomQuestionWidget() => Positioned(
         bottom: 28.h,

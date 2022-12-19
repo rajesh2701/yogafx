@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:yogafx/view/view.dart';
 
 class CheckBoxFormField extends FormField<bool> {
   final bool isChecked;
@@ -28,7 +29,11 @@ class CheckBoxFormField extends FormField<bool> {
                 children: [
                   Row(
                     children: [
-                      Checkbox(value: isChecked, onChanged: onChangedHandler),
+                      Checkbox(
+                        value: isChecked,
+                        onChanged: onChangedHandler,
+                        activeColor: AppColorsTheme.accentColor,
+                      ),
                       SizedBox(
                         width: 8.w,
                       ),

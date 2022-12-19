@@ -7,33 +7,90 @@ class Background extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Positioned(
-            top: -150.h,
-            left: 250.w,
-            child: SizedBox(
-              width: 258.h,
-              height: 258.h,
-              child: Material(
-                color: AppColorsTheme.circleColor,
-                shape: const CircleBorder(),
-              ),
-            )),
-        Positioned(
-            top: -100.h,
-            left: 300.w,
-            child: SizedBox(
-              width: 258.h,
-              height: 258.h,
-              child: Material(
-                color: AppColorsTheme.circleColor,
-                shape: const CircleBorder(),
-              ),
-            )),
-      ],
-    );
+    return ScreenUtil().screenWidth > 1000
+        ? Stack(
+            children: [
+              Positioned(
+                  top: -0.2.sh,
+                  left: 0.8.sw,
+                  child: SizedBox(
+                    width: 0.4.sh,
+                    height: 0.4.sh,
+                    child: Material(
+                      color: AppColorsTheme.circleColor,
+                      shape: const CircleBorder(),
+                    ),
+                  )),
+              Positioned(
+                  top: -0.07.sh,
+                  left: 0.88.sw,
+                  child: SizedBox(
+                    width: 0.4.sh,
+                    height: 0.4.sh,
+                    child: Material(
+                      color: AppColorsTheme.circleColor,
+                      shape: const CircleBorder(),
+                    ),
+                  )),
+            ],
+          )
+        : Stack(
+            children: [
+              Positioned(
+                  top: -0.15.sh,
+                  left: 0.6.sw,
+                  child: SizedBox(
+                    width: 258.h,
+                    height: 258.h,
+                    child: Material(
+                      color: AppColorsTheme.circleColor,
+                      shape: const CircleBorder(),
+                    ),
+                  )),
+              Positioned(
+                  top: -0.07.sh,
+                  left: 0.75.sw,
+                  child: SizedBox(
+                    width: 258.h,
+                    height: 258.h,
+                    child: Material(
+                      color: AppColorsTheme.circleColor,
+                      shape: const CircleBorder(),
+                    ),
+                  )),
+            ],
+          );
   }
+
+  // @override
+  // Widget build(BuildContext context) {
+  //   return Stack(
+  //     children: [
+  //       Positioned(
+  //           top: -150.h,
+  //           left: 250.w,
+  //           child: SizedBox(
+  //             width: 258.h,
+  //             height: 258.h,
+  //             child: Material(
+  //               color: AppColorsTheme.circleColor,
+  //               shape: const CircleBorder(),
+  //             ),
+  //           )),
+  //       Positioned(
+  //           top: -100.h,
+  //           left: 300.w,
+  //           child: SizedBox(
+  //             width: 258.h,
+  //             height: 258.h,
+  //             child: Material(
+  //               color: AppColorsTheme.circleColor,
+  //               shape: const CircleBorder(),
+  //             ),
+  //           )),
+  //     ],
+  //   );
+  // }
 
   // @override
   // Widget build(BuildContext context) {
