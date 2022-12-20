@@ -55,7 +55,7 @@ class ScreenRegister extends StatelessWidget {
 
   // FROM WIDGET 1 FOR NAME & EMAIL
   Widget formWidget1() => Positioned(
-        top: 220.h,
+        top: 250.h,
         left: 25.w,
         right: 25.w,
         child: Form(
@@ -158,7 +158,7 @@ class ScreenRegister extends StatelessWidget {
 
   // FROM WIDGET 2 FOR Age & Country...etc
   Widget formWidget2() => Positioned(
-        top: 200.h,
+        top: 220.h,
         left: 25.w,
         right: 25.w,
         child: Form(
@@ -184,9 +184,7 @@ class ScreenRegister extends StatelessWidget {
                 countrySearchPlaceholder: "Country",
                 stateSearchPlaceholder: "State",
                 onCountryChanged: (String? country) {
-                  authController
-                      .updateButtonClickStatus(false)
-                      .then((value) {
+                  authController.updateButtonClickStatus(false).then((value) {
                     authController.selectedCountry = country;
                     authController.isCountrySelected.value = true;
                     authController.update();
@@ -194,9 +192,7 @@ class ScreenRegister extends StatelessWidget {
                   });
                 },
                 onStateChanged: (String? state) {
-                  authController
-                      .updateButtonClickStatus(false)
-                      .then((value) {
+                  authController.updateButtonClickStatus(false).then((value) {
                     if (state == null || state == 'Select State') {
                       print('STATE: $state');
                       authController.isRegionSelected.value = false;
@@ -221,8 +217,7 @@ class ScreenRegister extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(20.r)),
                     //color: Colors.grey.shade300,
                     color: Colors.grey.shade200,
-                    border:
-                        Border.all(color: AppColorsTheme.black, width: 1)),
+                    border: Border.all(color: AppColorsTheme.black, width: 1)),
               ),
               SizedBox(
                 height: 8.h,
@@ -281,8 +276,7 @@ class ScreenRegister extends StatelessWidget {
                 keyboardType: TextInputType.number,
                 validator: Validator().number,
                 onChanged: (value) => {},
-                onSaved: (value) =>
-                    authController.ageController.text = value!,
+                onSaved: (value) => authController.ageController.text = value!,
                 textInputAction: TextInputAction.done,
               ),
               SizedBox(
@@ -331,15 +325,12 @@ class ScreenRegister extends StatelessWidget {
                   labelText: 'auth_register'.tr,
                   onClciked: () async {
                     //authController.collectUserData();
-                    authController
-                        .updateButtonClickStatus(true)
-                        .then((value) {
+                    authController.updateButtonClickStatus(true).then((value) {
                       if (_formKey.currentState!.validate()) {
                         //authController.registerWithEmailAndPassword();
 
                         if (authController.isRegionSelected.value) {
-                          if (authController.selectedRegion !=
-                              'Select State') {
+                          if (authController.selectedRegion != 'Select State') {
                             print(
                                 'COUNTRY: ${authController.selectedCountry} \n REGION: ${authController.selectedRegion}');
                             authController.registerWithEmailAndPassword();

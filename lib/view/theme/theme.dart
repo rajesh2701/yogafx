@@ -18,6 +18,8 @@ class AppColorsTheme {
   static Color cardColorBlack = const Color(0xFF474747);
   static Color circleColor = const Color.fromRGBO(110, 190, 69, .5);
   static Color red = const Color(0xFFFF0000);
+  static const Color violet = Color(0xFF8764C3);
+  static const Color violetShade1 = Color(0xFFB9A7D9);
 }
 
 class AppTheme {
@@ -50,8 +52,8 @@ class AppTheme {
 
   static final ThemeData darkTheme = ThemeData(
       scaffoldBackgroundColor: AppColorsTheme.black,
-      textTheme:
-          GoogleFonts.comfortaaTextTheme().apply(bodyColor: AppColorsTheme.white),
+      textTheme: GoogleFonts.comfortaaTextTheme()
+          .apply(bodyColor: AppColorsTheme.white),
       primaryColor: AppColorsTheme.black,
       hintColor: AppColorsTheme.white,
       sliderTheme: SliderThemeData(
