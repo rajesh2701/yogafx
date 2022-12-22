@@ -9,8 +9,6 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(ScreenUtil().screenWidth);
-    print(ScreenUtil().screenHeight);
     return Scaffold(
       body: Stack(
         children: [

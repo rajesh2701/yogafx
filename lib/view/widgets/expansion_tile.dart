@@ -15,17 +15,15 @@ class ExpansionTileWidget extends StatelessWidget {
     return ExpansionTile(
       title: Text(
         title,
-        style: fontBlack15Style,
+        style: detailScreenTitle,
       ),
       children: [
-        Card(
-          elevation: 4.h,
-          child: Padding(
-            padding: EdgeInsets.all(12.w),
-            child: Text(
-              childText,
-              textAlign: TextAlign.justify,
-            ),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 10.h),
+          child: Text(
+            childText,
+            textAlign: TextAlign.justify,
+            style: detailScreenText,
           ),
         )
       ],

@@ -21,7 +21,7 @@ class ScreenHome extends StatelessWidget {
   //APPBAR
   PreferredSizeWidget _appBar() => AppBar(
         title: Text('app_name'.tr),
-        centerTitle: true,
+        centerTitle: false,
         actions: [
           IconButton(
             onPressed: () {
@@ -145,13 +145,20 @@ class ScreenHome extends StatelessWidget {
                     child: Text(value),
                   );
                 }).toList(),
+                style: TextStyle(
+                    fontSize: 20.sp,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black),
                 decoration: InputDecoration(
                   border: UnderlineInputBorder(
                       borderSide: BorderSide(
-                          color: AppColorsTheme.subtextBlack, width: 0.2.h)),
+                          color: AppColorsTheme.accentColor, width: 4.h)),
                   focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
-                          color: AppColorsTheme.subtextBlack, width: 0.2.h)),
+                          color: AppColorsTheme.accentColor, width: 4.h)),
+                  enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                          color: AppColorsTheme.accentColor, width: 4.h)),
                 ),
               ),
             ),
@@ -171,13 +178,20 @@ class ScreenHome extends StatelessWidget {
                     child: Text(value),
                   );
                 }).toList(),
+                style: TextStyle(
+                    fontSize: 20.sp,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black),
                 decoration: InputDecoration(
                   border: UnderlineInputBorder(
                       borderSide: BorderSide(
-                          color: AppColorsTheme.subtextBlack, width: 0.2.h)),
+                          color: AppColorsTheme.accentColor, width: 4.h)),
                   focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
-                          color: AppColorsTheme.subtextBlack, width: 0.2.h)),
+                          color: AppColorsTheme.accentColor, width: 4.h)),
+                  enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                          color: AppColorsTheme.accentColor, width: 4.h)),
                 ),
               ),
             ),

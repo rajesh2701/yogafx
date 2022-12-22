@@ -11,6 +11,7 @@ class ScreenDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
           bodyPartName,
@@ -29,6 +30,17 @@ class ScreenDetails extends StatelessWidget {
                 height: 260.h,
                 fit: BoxFit.contain,
               ),
+            ),
+            SizedBox(
+              height: 40.h,
+            ),
+            Text(
+              bodyPartName,
+              style: detailScreenPartName,
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(
+              height: 30.h,
             ),
             const ExpansionTileWidget(
               title: 'Common Problems',
